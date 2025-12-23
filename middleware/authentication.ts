@@ -2,16 +2,8 @@ import jwt from "jsonwebtoken";
 import { Request, Response, NextFunction } from "express";
 import { JWT_SECRET } from "../config/config.js";
 import { ValidationError } from "../utils/CustomErrors.ts";
-
-export interface AuthRequest extends Request {
-  user?: {
-    userId: number;
-    email?: string;
-  };
-}
-
 const authenticate = (
-  req: AuthRequest,
+  req: Request,
   res: Response,
   next: NextFunction
 ): void => {
