@@ -6,14 +6,16 @@ export const queryParser = (
   _res: Response,
   next: NextFunction
 ) => {
-  let { sort, search, orderBy } = req.query;
+  let { sort, search, orderBy, page, limit } = req.query;
 
   const queryOptions = {
     search: undefined as string | undefined,
     sort: {
-      sortBy: "createdAt",
+      sortBy: "id",
       orderBy: "asc",
     },
+    page: 1,
+    limit: 5,
   };
 
   if (search && typeof search === "string") {
@@ -36,6 +38,10 @@ export const queryParser = (
       queryOptions.sort.orderBy = orderBy;
     }
   }
+
+  if (page) queryOptions.page = Math.max(1, Number.parseInt(page as string));
+  if (limit)
+    queryOptions.limit = Math.min(Number.parseInt(limit as string), 10);
 
   req.queryOptions = queryOptions;
 
