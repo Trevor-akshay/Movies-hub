@@ -48,3 +48,49 @@ export const validateMovieData = (data: any) => {
 
   return { title, description, genre, releaseDate, rating, imgUrl };
 };
+
+export const validateUserData = (data: any) => {
+  let { email, password, name } = data;
+
+  if (!email || typeof email !== "string") {
+    throw new ValidationError("Email is required and must be a string", 400);
+  }
+
+  if (!password || typeof password !== "string") {
+    throw new ValidationError("Password is required and must be a string", 400);
+  }
+
+  if (name && typeof name !== "string") {
+    throw new ValidationError("Name must be a string", 400);
+  }
+
+  return { email, password, name };
+};
+
+
+export enum HTTPStatusCode {
+  Ok = 200,
+  Created = 201,
+  Accepted = 202,
+  NoContent = 204,
+  PartialContent = 206,
+  MultipleChoices = 300,
+  MovedPermanently = 301,
+  Found = 302,
+  BadRequest = 400,
+  Unauthorized = 401,
+  PaymentRequired = 402,
+  Forbidden = 403,
+  NotFound = 404,
+  MethodNotAllowed = 405,
+  RequestTimeout = 408,
+  Conflict = 409,
+  Gone = 410,
+  UnprocessableEntity = 422,
+  TooManyRequests = 429,
+  InternalServerError = 500,
+  NotImplemented = 501,
+  BadGateway = 502,
+  ServiceUnavailable = 503,
+  GatewayTiemout = 504,
+}
