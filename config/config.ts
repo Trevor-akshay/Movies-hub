@@ -1,0 +1,17 @@
+import "dotenv/config";
+
+const {
+  PORT,
+  JWT_SECRET,
+  REFRESH_TOKEN_SECRET,
+  DATABASE_URL,
+  API_REQUESTS_PER_USER,
+} = process.env;
+
+export {
+  PORT,
+  JWT_SECRET,
+  REFRESH_TOKEN_SECRET,
+  DATABASE_URL,
+  API_REQUESTS_PER_USER,
+};
