@@ -26,6 +26,7 @@ app.use("*all", (_req, _res, next: NextFunction) => {
 
 app.use(errorHandler);
 
+
 app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);
   prisma
