@@ -17,19 +17,23 @@ moviesRouter.get(
   queryParser,
   movieControllers.getAllMovies
 );
+
 moviesRouter.get(
   "/:id",
   authenticate,
   RateLimiter,
   movieControllers.getMovieById
 );
+
 moviesRouter.post("/", authenticate, RateLimiter, movieControllers.createMovie);
+
 moviesRouter.put(
   "/:id",
   authenticate,
   RateLimiter,
   movieControllers.updateMovie
 );
+
 moviesRouter.delete(
   "/:id",
   authenticate,
