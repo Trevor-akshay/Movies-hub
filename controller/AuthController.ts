@@ -122,7 +122,6 @@ class AuthController implements IAuthController {
         expiresIn: "1h",
         subject: String(userId),
       });
-
       // Optional rotation: issue a new refresh token each refresh.
       //   const newRefreshToken = jwt.sign({ email }, REFRESH_TOKEN_SECRET!, {
       //     expiresIn: "7d",
