@@ -30,4 +30,5 @@ const RateLimiter = (req: Request, res: Response, next: NextFunction) => {
   next();
 };
 
+
 export default RateLimiter;
