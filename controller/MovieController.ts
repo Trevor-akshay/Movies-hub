@@ -123,4 +123,5 @@ class MovieController implements IMovieController {
   };
 }
 
+
 export default MovieController;
