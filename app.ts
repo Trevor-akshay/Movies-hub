@@ -18,7 +18,7 @@ app.use(logger);
 app.use("/api/v1/movies", moviesRouter);
 app.use("/api/v1/auth", authRouter);
 
-app.use("*all", (_req, _res, next: NextFunction) => {
+app.use("*", (_req, _res, next: NextFunction) => {
   const error: any = new Error("Endpoint unavailable");
   error.status = 405;
   next(error);
