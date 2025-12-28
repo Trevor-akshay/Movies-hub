@@ -4,7 +4,7 @@ type User = {
   name: string;
 };
 
-type UserPublic = {
+type UserPublic = { 
   id: number;
   email: string;
   name: string | null;
