@@ -88,7 +88,7 @@ class AuthController implements IAuthController {
       const refreshToken = (req as Request & { cookies?: any }).cookies
         ?.refreshToken;
 
-      if (!refreshToken) {
+      if (!refreshToken) { 
         throw new ValidationError("Refresh token missing", 401);
       }
 
