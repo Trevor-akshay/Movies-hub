@@ -108,7 +108,7 @@ class MovieController implements IMovieController {
     res: Response,
     next: NextFunction
   ): Promise<void> => {
-    try {
+    try { 
       const id = Number.parseInt(req.params.id);
 
       if (isNaN(id)) throw new ValidationError("Invalid movie ID", 400);
