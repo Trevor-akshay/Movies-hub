@@ -15,7 +15,7 @@ export const queryParser = (
       orderBy: "asc",
     },
     page: 1,
-    limit: 5,
+    limit: 5
   };
 
   if (search && typeof search === "string") {
