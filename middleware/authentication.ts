@@ -12,7 +12,7 @@ const authenticate = (
     next(new ValidationError("Authorization header missing or malformed", 401));
     return;
   }
-
+ 
   const token = authHeader.split(" ")[1];
 
   try {
