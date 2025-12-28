@@ -9,7 +9,7 @@ type Movie = {
   imgUrl?: string;
 };
 
-type MovieResponse = {
+type MovieResponse = { 
   id: number;
   title: string;
   description: string | null;
