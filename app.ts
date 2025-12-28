@@ -31,7 +31,7 @@ app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);
   prisma
     .$connect()
-    .then(() => {
+    .then(() => { 
       console.log("Connected to the database");
     })
     .catch((error) => {
