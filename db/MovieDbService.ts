@@ -73,7 +73,7 @@ class MovieDbService implements IMovieDbService {
     });
   };
 
-  deleteMovie = async (id: number) => {
+  deleteMovie = async (id: number) => { 
     return await prisma.movie.delete({
       where: { id },
     });
