@@ -26,7 +26,6 @@ const RateLimiter = (req: Request, res: Response, next: NextFunction) => {
   } else {
     map[id] = { count: 1, timeStamp: [currentTime] };
   }
-
   next();
 };
 
